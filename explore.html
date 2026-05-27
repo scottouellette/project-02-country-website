@@ -6,12 +6,12 @@
     <title>Sun Valley</title>
     <link rel="stylesheet" href="styles/normalize-fwd.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <div class="site-wrapper">
@@ -20,6 +20,11 @@
             <a href="index.html" class="logo">
                 <img src="favicon.svg" alt="website logo" height="75" width="75">Sun Valley
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="explore.html">Explore</a></li>
                 <li><a href="history.html">History</a></li>
@@ -27,8 +32,20 @@
             </ul>
         </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+        <section class="explore-content">
+            <h1>Explore</h1>
+            <div class="explore-images">
+            <img src="images/sun-valley-resort.webp" alt="Sun Valley Ski Resort">
+            <p>Ski at the beautiful Sun Valley Resort on Bald Mountain</p>
+            <img src="images/galena-lodge.jpg" alt="Galena Lodge in Sun Valley">
+            <p>Cross-country ski at Galena Lodge and enjoy lunch at the cabin. In the summertime you can mountain bike as well!</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; Scott Ouellette 2026</p>
+    </footer>
     </div>
 </body>
 </html>

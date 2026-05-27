@@ -1,29 +1,17 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic (CALLED IN ANOTHER FILE)
-	- Normalize
-	- Box sizing
-	- Media width
-# Base
-	- Typography
-	- Elements
-	- Links
-# Layouts
-# Components
-	- Header
-	- Main
-	- Footer
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+/* Images - Max-Width Reset */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Typography
 --------------------------------------------- */
 body {
-	
+	background-color: #ffffe0;
 }
 
 h1,
@@ -32,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-	
+	font-size: 2rem;
 	
 }
 
@@ -93,6 +81,7 @@ a:active {
 	max-width: 120rem;
 	margin: 0 auto;
 	background-color: #ffffff;
+  padding-bottom: 1px;
 }
 
 
@@ -141,6 +130,7 @@ a:active {
 }
 
 /* Hamburger button */
+/* Found code on MDN + Claude */
 
 .nav-toggle {
     display: flex;
@@ -264,7 +254,7 @@ a:active {
 
 /* ── Desktop ── */
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .hero {
     height: 100vh;
   }
@@ -281,6 +271,54 @@ a:active {
 
 /* END HOME PAGE */
 /* EXPLORE PAGE */
+.explore-content{
+  margin-top: 90px;
+  padding: 1rem;
+  background-color: #ffffe0;
+}
+
+.explore-content h1{
+  text-align: center;
+  padding: 1rem;
+}
+.explore-images {
+  margin: 0 0.5rem;
+}
+
+.explore-images img{
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .explore-images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 0;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    
+  }
+
+.explore-images p{
+  align-content: center;
+  padding: 3rem;
+}
+
+.explore-images img{
+  max-height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.explore-images p{
+  font-size: 1.5rem;
+}
+
+}
+
+/* END EXPLORE PAGE */
+/* HISTORY PAGE */
 
 
 /* Footer
