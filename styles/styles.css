@@ -1,0 +1,400 @@
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/* Images - Max-Width Reset */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Typography
+--------------------------------------------- */
+body {
+	background-color: #ffffe0;
+}
+
+h1,
+h2,
+p {
+	font-family: "Roboto", sans-serif;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+h2{
+  font-size: 1.5rem;
+}
+
+
+/* Elements
+--------------------------------------------- */
+ul {
+	
+}
+
+ol {
+	
+}
+
+dl {
+	
+}
+
+figure {
+	
+}
+
+table {
+	
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	
+}
+
+a:visited {
+	
+}
+
+a:hover {
+	
+}
+
+a:focus {
+	
+}
+
+a:active {
+	
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.site-wrapper {
+	max-width: 120rem;
+	margin: 0 auto;
+	background-color: #ffffff;
+  padding-bottom: 1px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+.site-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background-color: #ffffff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;	
+  font-family: "Roboto", sans-serif;
+}
+
+.site-nav a {
+	color: #1e3052;
+}
+
+.logo {
+	display: flex;
+  	align-items: center;
+  	text-decoration: none;
+	font-size: 2rem;
+	font-weight: bold;
+	text-decoration: none;
+	gap: 1rem;
+}
+
+.nav-links{
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+}
+.nav-links a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+/* Hamburger button */
+/* Found code on MDN + Claude */
+
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #1e3052;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animate to X when open */
+
+.nav-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+
+@media (max-width: 767px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* Hide hamburger on desktop */
+
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* Main
+--------------------------------------------- */
+/* HOME PAGE */
+
+.hero {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;   
+  margin-top: 90px;      
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center;  
+}
+
+/* Dark overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.10);
+  z-index: 1;
+}
+
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;               
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Desktop ── */
+
+@media (min-width: 48rem) {
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+
+}
+
+/* END HOME PAGE */
+/* EXPLORE PAGE */
+
+.explore-content{
+  margin-top: 90px;
+  padding: 1rem;
+  background-color: #ffffe0;
+}
+
+.explore-content h1{
+  text-align: center;
+  padding: 1rem;
+}
+.explore-images {
+  margin: 0 0.5rem;
+}
+
+.explore-images img{
+  border-radius: 0.5rem;
+  border: 2px solid #1e3052;
+}
+
+@media (min-width: 48rem) {
+  .explore-images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 0;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    
+  }
+
+.explore-images blockquote{
+  align-content: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+}
+
+.explore-images img{
+  max-height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+}
+
+/* END EXPLORE PAGE */
+/* HISTORY PAGE */
+
+.history-content{
+  margin-top: 90px;
+  padding: 1rem;
+  background-color: #ffffe0;
+  height: 90%;
+}
+
+.history-content h1{
+  text-align: center;
+  padding: 1rem;
+}
+
+.history-card{
+  background-color: #ffffff;
+  border: 2px solid #1e3052;
+  padding: 1rem;
+  flex: 1;
+}
+
+@media (min-width: 48rem){
+  .history-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+}
+
+/* END HISTORY PAGE */
+/* CREDITS PAGE */
+
+.credits-content{
+  margin-top: 90px;
+  height: 90%;
+  padding: 1rem;
+  background-color: #ffffe0;
+}
+
+.credits-content h1{
+  text-align: center;
+  padding: 1rem;
+}
+
+.credits-table{
+  border: 2px solid #1e3052;
+  margin: 0 auto;
+}
+
+.credits-table td{
+  background-color: #1e3052;
+  color: #ffffe0;
+  text-align: center;
+}
+
+.credits-table th{
+  text-align: center;
+  border: 1px solid #1e3052;
+}
+
+.credits-table tr{
+  padding: 1rem;
+}
+
+
+
+/* Footer
+--------------------------------------------- */
+
+.site-footer{
+  display: block;
+	text-align: center;
+	background-color: #ffffff;
+}
